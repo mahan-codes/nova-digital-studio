@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
+
 :root {
   --bg: #080808;
   --surface: #101010;
   --surface-2: #151515;
-  --surface-3: #1b1b1b;
 
   --text: #f4f4f0;
   --muted: #969690;
 
   --line: #252525;
-  --line-light: #343434;
+  --line-light: #3a3a3a;
 
   --accent: #d8ff3e;
   --accent-soft: rgba(216, 255, 62, 0.08);
@@ -18,11 +18,13 @@
   --max: 1180px;
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -30,22 +32,31 @@ html {
   scroll-padding-top: 90px;
 }
 
+
 body {
   background: var(--bg);
   color: var(--text);
+
   font-family: "Vazirmatn", sans-serif;
+
   line-height: 1.8;
+
   overflow-x: hidden;
+
+  max-width: 100%;
 }
+
 
 body.modal-open {
   overflow: hidden;
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 
 button,
 input,
@@ -53,9 +64,11 @@ textarea {
   font-family: inherit;
 }
 
+
 button {
   cursor: pointer;
 }
+
 
 ::selection {
   background: var(--accent);
@@ -69,13 +82,18 @@ button {
 
 .scroll-progress {
   position: fixed;
+
   top: 0;
   right: 0;
+
   width: 0;
   height: 2px;
+
   background: var(--accent);
+
   z-index: 9999;
-  box-shadow: 0 0 15px rgba(216, 255, 62, 0.5);
+
+  box-shadow: 0 0 15px rgba(216,255,62,.5);
 }
 
 
@@ -85,40 +103,57 @@ button {
 
 .header {
   width: min(var(--max), calc(100% - 48px));
+
   height: 82px;
+
   margin: 0 auto;
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
   position: relative;
+
   z-index: 1000;
 }
+
 
 .logo {
   direction: ltr;
 
   font-size: 24px;
+
   font-weight: 800;
+
   letter-spacing: -1px;
 
-  transition: transform 0.25s ease;
+  transition: transform .25s ease;
 }
+
 
 .logo:hover {
   transform: translateY(-2px);
 }
 
+
 .logo span {
   color: var(--accent);
 }
 
+
+/* =========================
+   NAV
+========================= */
+
 .nav {
   display: flex;
+
   align-items: center;
+
   gap: 34px;
 }
+
 
 .nav a {
   position: relative;
@@ -126,12 +161,12 @@ button {
   color: var(--muted);
 
   font-size: 14px;
+
   font-weight: 500;
 
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  transition: color .25s ease;
 }
+
 
 .nav a::after {
   content: "";
@@ -146,13 +181,15 @@ button {
 
   background: var(--accent);
 
-  transition: width 0.25s ease;
+  transition: width .25s ease;
 }
+
 
 .nav a:hover,
 .nav a.active {
   color: var(--text);
 }
+
 
 .nav a:hover::after,
 .nav a.active::after {
@@ -161,7 +198,7 @@ button {
 
 
 /* =========================
-   MOBILE MENU
+   MOBILE BUTTON
 ========================= */
 
 .menu-toggle {
@@ -171,45 +208,41 @@ button {
   height: 44px;
 
   border: 1px solid var(--line);
+
   border-radius: 12px;
 
   background: var(--surface);
-  color: var(--text);
 
   align-items: center;
   justify-content: center;
+
   flex-direction: column;
+
   gap: 5px;
-
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease;
 }
 
-.menu-toggle:hover {
-  border-color: var(--line-light);
-  background: var(--surface-2);
-}
 
 .menu-toggle span {
   width: 19px;
   height: 2px;
 
   background: var(--text);
+
   border-radius: 10px;
 
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  transition: .25s ease;
 }
+
 
 .menu-toggle.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
+
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
+
 
 .menu-toggle.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
@@ -222,12 +255,14 @@ button {
 
 .hero {
   width: min(var(--max), calc(100% - 48px));
+
   min-height: calc(100vh - 82px);
 
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+
+  grid-template-columns: 1.15fr .85fr;
 
   align-items: center;
 
@@ -236,15 +271,19 @@ button {
   position: relative;
 }
 
+
 .hero-content {
   position: relative;
+
   z-index: 2;
 }
+
 
 .eyebrow {
   color: var(--muted);
 
   font-size: 11px;
+
   font-weight: 600;
 
   letter-spacing: 1.5px;
@@ -252,20 +291,24 @@ button {
   margin-bottom: 22px;
 }
 
+
 .hero h1 {
   max-width: 850px;
 
   font-size: clamp(48px, 7vw, 92px);
 
   line-height: 1.08;
+
   letter-spacing: -3px;
 
   font-weight: 800;
 }
 
+
 .hero h1 span {
   color: var(--accent);
 }
+
 
 .hero-copy {
   max-width: 560px;
@@ -275,11 +318,14 @@ button {
   color: var(--muted);
 
   font-size: 16px;
+
   line-height: 2;
 }
 
+
 .hero-actions {
   display: flex;
+
   align-items: center;
 
   gap: 14px;
@@ -287,12 +333,14 @@ button {
   margin-top: 38px;
 }
 
+
 .btn {
   min-height: 52px;
 
   padding: 0 23px;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -301,56 +349,81 @@ button {
   border-radius: 10px;
 
   font-size: 13px;
+
   font-weight: 600;
 
   transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
 }
+
 
 .btn:hover {
   transform: translateY(-3px);
 }
 
-.btn span {
-  font-size: 16px;
-}
 
 .btn-primary {
   background: var(--accent);
+
   color: #050505;
 }
 
+
 .btn-primary:hover {
   background: #e3ff65;
-  box-shadow: 0 12px 35px rgba(216, 255, 62, 0.12);
+
+  box-shadow: 0 12px 35px rgba(216,255,62,.12);
 }
+
 
 .btn-ghost {
   border: 1px solid var(--line);
+
   color: var(--text);
 }
 
+
 .btn-ghost:hover {
   border-color: #555;
+
   background: var(--surface);
 }
+
+
+/* فلش واقعی متنی، نه ایموجی */
+
+.arrow-text {
+  font-family: Arial, sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  display: inline-block;
+
+  transform: translateY(-1px);
+}
+
 
 .hero-meta {
   margin-top: 38px;
 
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   color: #666;
 
   font-size: 10px;
+
   font-weight: 600;
 }
+
 
 .hero-meta i {
   width: 4px;
@@ -363,7 +436,7 @@ button {
 
 
 /* =========================
-   HERO ORB
+   HERO VISUAL
 ========================= */
 
 .hero-visual {
@@ -372,18 +445,23 @@ button {
   position: relative;
 
   display: grid;
+
   place-items: center;
 }
 
+
 .hero-orb {
   width: min(430px, 80%);
+
   aspect-ratio: 1;
 
   position: relative;
 
   display: grid;
+
   place-items: center;
 }
+
 
 .orb-glow {
   position: absolute;
@@ -393,10 +471,11 @@ button {
 
   border-radius: 50%;
 
-  background: rgba(216, 255, 62, 0.035);
+  background: rgba(216,255,62,.035);
 
   filter: blur(60px);
 }
+
 
 .orb-ring {
   position: absolute;
@@ -406,21 +485,24 @@ button {
   border-radius: 50%;
 }
 
+
 .orb-ring-one {
   inset: 0;
 
   animation: rotateOrb 18s linear infinite;
 }
 
+
 .orb-ring-two {
   inset: 12%;
 
   border-style: dashed;
 
-  opacity: 0.35;
+  opacity: .35;
 
   animation: rotateOrbReverse 25s linear infinite;
 }
+
 
 .orb-ring-one::before {
   content: "";
@@ -440,11 +522,14 @@ button {
   box-shadow: 0 0 30px var(--accent);
 }
 
+
 .orb-core {
   width: 48%;
+
   aspect-ratio: 1;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 50%;
@@ -459,16 +544,17 @@ button {
 
   border: 1px solid #2d2d2d;
 
-  font-size: clamp(60px, 8vw, 100px);
+  font-size: clamp(60px,8vw,100px);
 
   font-weight: 800;
 
   color: var(--accent);
 
   box-shadow:
-    0 0 80px rgba(216, 255, 62, 0.06),
-    inset 0 0 50px rgba(255, 255, 255, 0.03);
+    0 0 80px rgba(216,255,62,.06),
+    inset 0 0 50px rgba(255,255,255,.03);
 }
+
 
 .orb-dot {
   position: absolute;
@@ -479,12 +565,11 @@ button {
   width: 6px;
   height: 6px;
 
-  background: #fff;
+  background: white;
 
   border-radius: 50%;
-
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
+
 
 .floating-card {
   position: absolute;
@@ -497,38 +582,44 @@ button {
 
   border-radius: 10px;
 
-  background: rgba(16, 16, 16, 0.85);
+  background: rgba(16,16,16,.85);
 
   backdrop-filter: blur(12px);
 
   display: flex;
+
   flex-direction: column;
 
   line-height: 1.4;
 
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-
   animation: floating 4s ease-in-out infinite;
 }
 
+
 .floating-card span {
   color: #666;
+
   font-size: 8px;
 }
 
+
 .floating-card strong {
   color: #ddd;
+
   font-size: 10px;
 }
+
 
 .floating-card-one {
   top: 17%;
   left: 2%;
 }
 
+
 .floating-card-two {
   bottom: 14%;
   right: 2%;
+
   animation-delay: -2s;
 }
 
@@ -545,10 +636,12 @@ button {
   padding: 120px 0;
 }
 
+
 .section-heading {
   display: flex;
 
   align-items: flex-end;
+
   justify-content: space-between;
 
   gap: 30px;
@@ -556,9 +649,10 @@ button {
   margin-bottom: 55px;
 }
 
+
 .section h2,
 .about h2 {
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(38px,5vw,64px);
 
   line-height: 1.2;
 
@@ -567,10 +661,12 @@ button {
   font-weight: 800;
 }
 
+
 .section h2 span,
 .about h2 span {
   color: var(--accent);
 }
+
 
 .section-note {
   color: var(--muted);
@@ -597,9 +693,11 @@ button {
   border-top: 1px solid var(--line);
 }
 
+
 .about-text {
   padding-top: 40px;
 }
+
 
 .about-text p {
   color: var(--muted);
@@ -611,9 +709,11 @@ button {
   max-width: 520px;
 }
 
+
 .about-text p + p {
   margin-top: 24px;
 }
+
 
 .about-stats {
   display: flex;
@@ -627,17 +727,18 @@ button {
   border-top: 1px solid var(--line);
 }
 
+
 .stat {
   display: flex;
+
   flex-direction: column;
 
   gap: 4px;
 }
 
+
 .stat strong {
   direction: ltr;
-
-  color: var(--text);
 
   font-size: 25px;
 
@@ -645,6 +746,7 @@ button {
 
   font-weight: 800;
 }
+
 
 .stat span {
   color: #666;
@@ -660,10 +762,11 @@ button {
 .cards {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
 
   gap: 18px;
 }
+
 
 .card {
   min-height: 300px;
@@ -677,6 +780,7 @@ button {
   border-radius: 18px;
 
   display: flex;
+
   flex-direction: column;
 
   justify-content: space-between;
@@ -686,32 +790,11 @@ button {
   overflow: hidden;
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
+    transform .3s ease,
+    border-color .3s ease,
+    background .3s ease;
 }
 
-.card::before {
-  content: "";
-
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  top: -100px;
-  left: -100px;
-
-  background: var(--accent-soft);
-
-  border-radius: 50%;
-
-  filter: blur(30px);
-
-  opacity: 0;
-
-  transition: opacity 0.3s ease;
-}
 
 .card:hover {
   transform: translateY(-8px);
@@ -721,16 +804,15 @@ button {
   background: var(--surface-2);
 }
 
-.card:hover::before {
-  opacity: 1;
-}
 
 .card-top {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 }
+
 
 .card-top > span {
   color: var(--accent);
@@ -740,11 +822,13 @@ button {
   font-weight: 700;
 }
 
+
 .card-icon {
   width: 38px;
   height: 38px;
 
   display: grid;
+
   place-items: center;
 
   border: 1px solid var(--line);
@@ -753,11 +837,16 @@ button {
 
   color: #777;
 
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+
   transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
 }
+
 
 .card:hover .card-icon {
   background: var(--accent);
@@ -767,6 +856,7 @@ button {
   transform: rotate(45deg);
 }
 
+
 .card h3 {
   margin-top: 50px;
 
@@ -774,6 +864,7 @@ button {
 
   font-weight: 700;
 }
+
 
 .card p {
   margin-top: 14px;
@@ -785,16 +876,19 @@ button {
   line-height: 2;
 }
 
+
 .card-line {
   width: 0;
+
   height: 1px;
 
   background: var(--accent);
 
   margin-top: 25px;
 
-  transition: width 0.35s ease;
+  transition: width .35s ease;
 }
+
 
 .card:hover .card-line {
   width: 100%;
@@ -809,7 +903,10 @@ button {
   display: grid;
 
   gap: 16px;
+
+  width: 100%;
 }
+
 
 .project {
   min-height: 220px;
@@ -822,7 +919,7 @@ button {
 
   display: grid;
 
-  grid-template-columns: 80px 1fr auto;
+  grid-template-columns: 80px minmax(0,1fr) auto;
 
   align-items: center;
 
@@ -835,10 +932,20 @@ button {
   cursor: pointer;
 
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+    transform .35s ease,
+    border-color .35s ease,
+    background .35s ease;
 }
+
+
+.project:hover {
+  transform: translateX(-7px);
+
+  border-color: #414141;
+
+  background: #0d0d0d;
+}
+
 
 .project::before {
   content: "";
@@ -850,26 +957,13 @@ button {
   background:
     radial-gradient(
       circle at 75% 50%,
-      rgba(216, 255, 62, 0.08),
+      rgba(216,255,62,.08),
       transparent 35%
     );
 
   pointer-events: none;
-
-  transition: transform 0.5s ease;
 }
 
-.project:hover {
-  transform: translateX(-7px);
-
-  border-color: #414141;
-
-  background: #0d0d0d;
-}
-
-.project:hover::before {
-  transform: scale(1.2);
-}
 
 .project-number {
   color: var(--muted);
@@ -877,13 +971,19 @@ button {
   font-size: 12px;
 
   position: relative;
+
   z-index: 2;
 }
 
+
 .project-info {
   position: relative;
+
   z-index: 2;
+
+  min-width: 0;
 }
+
 
 .project p {
   color: var(--muted);
@@ -893,12 +993,13 @@ button {
   margin-bottom: 8px;
 }
 
+
 .project h3 {
   direction: ltr;
 
   text-align: right;
 
-  font-size: clamp(38px, 5vw, 68px);
+  font-size: clamp(38px,5vw,68px);
 
   line-height: 1;
 
@@ -907,17 +1008,21 @@ button {
   font-weight: 800;
 }
 
+
 .project-one h3 {
   color: var(--accent);
 }
+
 
 .project-two h3 {
   color: #f0f0f0;
 }
 
+
 .project-three h3 {
   color: #bcbcbc;
 }
+
 
 .project-view {
   display: inline-block;
@@ -927,21 +1032,8 @@ button {
   color: #666;
 
   font-size: 10px;
-
-  opacity: 0;
-
-  transform: translateY(5px);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
 }
 
-.project:hover .project-view {
-  opacity: 1;
-
-  transform: translateY(0);
-}
 
 .arrow {
   width: 48px;
@@ -952,18 +1044,23 @@ button {
   border-radius: 50%;
 
   display: grid;
+
   place-items: center;
 
-  font-size: 20px;
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
 
   position: relative;
+
   z-index: 2;
 
   transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
 }
+
 
 .project:hover .arrow {
   background: var(--accent);
@@ -990,12 +1087,14 @@ button {
   border-top: 1px solid var(--line);
 }
 
+
 .contact .eyebrow {
   margin-bottom: 28px;
 }
 
+
 .contact h2 {
-  font-size: clamp(44px, 7vw, 88px);
+  font-size: clamp(44px,7vw,88px);
 
   line-height: 1.15;
 
@@ -1004,9 +1103,11 @@ button {
   font-weight: 800;
 }
 
+
 .contact h2 span {
   color: var(--accent);
 }
+
 
 .contact-description {
   max-width: 500px;
@@ -1022,16 +1123,19 @@ button {
 
 
 /* =========================
-   CONTACT FORM
+   FORM
 ========================= */
 
 .contact-form {
+  width: 100%;
+
   max-width: 720px;
 
   margin: 50px auto 0;
 
   text-align: right;
 }
+
 
 .form-row {
   display: grid;
@@ -1041,23 +1145,34 @@ button {
   gap: 16px;
 }
 
+
 .form-group {
   margin-bottom: 18px;
+
+  width: 100%;
 }
+
 
 .form-group label {
   display: block;
 
   margin-bottom: 8px;
 
-  color: #777;
+  color: #888;
 
   font-size: 11px;
+
+  font-weight: 500;
 }
+
 
 .form-group input,
 .form-group textarea {
+  display: block;
+
   width: 100%;
+
+  max-width: 100%;
 
   border: 1px solid var(--line);
 
@@ -1073,22 +1188,32 @@ button {
 
   font-size: 13px;
 
+  direction: rtl;
+
   transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
 }
+
+
+.form-group input {
+  height: 52px;
+}
+
 
 .form-group textarea {
-  resize: vertical;
+  min-height: 145px;
 
-  min-height: 140px;
+  resize: vertical;
 }
+
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #555;
 }
+
 
 .form-group input:focus,
 .form-group textarea:focus {
@@ -1096,8 +1221,10 @@ button {
 
   background: var(--surface-2);
 
-  box-shadow: 0 0 0 3px rgba(216, 255, 62, 0.03);
+  box-shadow:
+    0 0 0 3px rgba(216,255,62,.03);
 }
+
 
 .submit-btn {
   width: 100%;
@@ -1119,22 +1246,25 @@ button {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
 }
+
 
 .submit-btn:hover {
   transform: translateY(-3px);
 
   background: #e3ff65;
 
-  box-shadow: 0 15px 40px rgba(216, 255, 62, 0.12);
+  box-shadow:
+    0 15px 40px rgba(216,255,62,.12);
 }
 
 
@@ -1154,6 +1284,7 @@ button {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -1172,6 +1303,7 @@ button {
   position: fixed;
 
   left: 25px;
+
   bottom: 25px;
 
   width: 44px;
@@ -1181,9 +1313,7 @@ button {
 
   border-radius: 12px;
 
-  background: rgba(15, 15, 15, 0.9);
-
-  backdrop-filter: blur(10px);
+  background: rgba(15,15,15,.92);
 
   color: var(--text);
 
@@ -1192,16 +1322,14 @@ button {
   z-index: 500;
 
   opacity: 0;
+
   visibility: hidden;
 
   transform: translateY(15px);
 
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease,
-    transform 0.25s ease,
-    background 0.25s ease;
+  transition: .25s ease;
 }
+
 
 .back-top.show {
   opacity: 1;
@@ -1210,6 +1338,7 @@ button {
 
   transform: translateY(0);
 }
+
 
 .back-top:hover {
   background: var(--accent);
@@ -1232,6 +1361,7 @@ button {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 20px;
@@ -1240,10 +1370,9 @@ button {
 
   visibility: hidden;
 
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+  transition: .25s ease;
 }
+
 
 .modal.show {
   opacity: 1;
@@ -1251,22 +1380,25 @@ button {
   visibility: visible;
 }
 
+
 .modal-overlay {
   position: absolute;
 
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(0,0,0,.82);
 
   backdrop-filter: blur(10px);
 }
 
+
 .modal-box {
-  width: min(650px, 100%);
+  width: min(650px,100%);
 
   padding: 42px;
 
   position: relative;
+
   z-index: 2;
 
   border: 1px solid var(--line);
@@ -1276,26 +1408,29 @@ button {
   background:
     radial-gradient(
       circle at 80% 0%,
-      rgba(216, 255, 62, 0.07),
+      rgba(216,255,62,.07),
       transparent 35%
     ),
     #101010;
 
-  box-shadow: 0 30px 100px rgba(0,0,0,0.5);
+  box-shadow: 0 30px 100px rgba(0,0,0,.5);
 
-  transform: translateY(20px) scale(0.98);
+  transform: translateY(20px) scale(.98);
 
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
+
 
 .modal.show .modal-box {
   transform: translateY(0) scale(1);
 }
 
+
 .modal-close {
   position: absolute;
 
   top: 18px;
+
   left: 18px;
 
   width: 38px;
@@ -1312,11 +1447,8 @@ button {
   font-size: 24px;
 
   line-height: 1;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
 }
+
 
 .modal-close:hover {
   background: var(--accent);
@@ -1324,21 +1456,24 @@ button {
   color: #000;
 }
 
+
 .modal-box .eyebrow {
   color: var(--accent);
 }
+
 
 .modal-box h2 {
   direction: ltr;
 
   text-align: right;
 
-  font-size: clamp(50px, 8vw, 80px);
+  font-size: clamp(50px,8vw,80px);
 
   line-height: 1;
 
   margin-bottom: 25px;
 }
+
 
 .modal-box > p:not(.eyebrow) {
   color: var(--muted);
@@ -1346,9 +1481,8 @@ button {
   font-size: 14px;
 
   line-height: 2.1;
-
-  max-width: 550px;
 }
+
 
 .modal-tags {
   display: flex;
@@ -1359,6 +1493,7 @@ button {
 
   margin-top: 28px;
 }
+
 
 .modal-tags span {
   padding: 7px 12px;
@@ -1372,6 +1507,7 @@ button {
   font-size: 10px;
 }
 
+
 .modal-footer {
   margin-top: 35px;
 
@@ -1382,12 +1518,14 @@ button {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   color: #555;
 
   font-size: 10px;
 }
+
 
 .modal-footer span:first-child {
   color: var(--accent);
@@ -1397,7 +1535,7 @@ button {
 
 
 /* =========================
-   REVEAL ANIMATION
+   REVEAL
 ========================= */
 
 .reveal {
@@ -1406,9 +1544,10 @@ button {
   transform: translateY(25px);
 
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity .7s ease,
+    transform .7s ease;
 }
+
 
 .reveal.visible {
   opacity: 1;
@@ -1418,10 +1557,11 @@ button {
 
 
 /* =========================
-   ANIMATIONS
+   ANIMATION
 ========================= */
 
 @keyframes rotateOrb {
+
   from {
     transform: rotate(0deg);
   }
@@ -1429,9 +1569,12 @@ button {
   to {
     transform: rotate(360deg);
   }
+
 }
+
 
 @keyframes rotateOrbReverse {
+
   from {
     transform: rotate(360deg);
   }
@@ -1439,9 +1582,12 @@ button {
   to {
     transform: rotate(0deg);
   }
+
 }
 
+
 @keyframes floating {
+
   0%,
   100% {
     transform: translateY(0);
@@ -1450,6 +1596,7 @@ button {
   50% {
     transform: translateY(-8px);
   }
+
 }
 
 
@@ -1466,12 +1613,14 @@ button {
 
     min-height: auto;
 
-    gap: 50px;
+    gap: 40px;
   }
+
 
   .hero-visual {
     min-height: 400px;
   }
+
 
   .about {
     grid-template-columns: 1fr;
@@ -1479,9 +1628,11 @@ button {
     gap: 25px;
   }
 
+
   .about-text {
     padding-top: 0;
   }
+
 
   .cards {
     grid-template-columns: 1fr;
@@ -1497,19 +1648,22 @@ button {
 @media (max-width: 800px) {
 
   .header {
-    width: min(var(--max), calc(100% - 32px));
+    width: calc(100% - 32px);
 
     height: 72px;
   }
+
 
   .menu-toggle {
     display: flex;
   }
 
+
   .nav {
     position: absolute;
 
     top: 66px;
+
     right: 0;
 
     width: 100%;
@@ -1524,7 +1678,7 @@ button {
 
     gap: 0;
 
-    background: rgba(15, 15, 15, 0.98);
+    background: rgba(15,15,15,.98);
 
     border: 1px solid var(--line);
 
@@ -1536,11 +1690,9 @@ button {
 
     transform: translateY(-10px);
 
-    transition:
-      opacity 0.25s ease,
-      visibility 0.25s ease,
-      transform 0.25s ease;
+    transition: .25s ease;
   }
+
 
   .nav.open {
     opacity: 1;
@@ -1550,15 +1702,18 @@ button {
     transform: translateY(0);
   }
 
+
   .nav a {
     padding: 13px 8px;
 
     border-bottom: 1px solid var(--line);
   }
 
+
   .nav a:last-child {
     border-bottom: none;
   }
+
 
   .nav a::after {
     display: none;
@@ -1566,107 +1721,134 @@ button {
 
 
   .hero {
-    width: min(var(--max), calc(100% - 32px));
+    width: calc(100% - 32px);
 
-    padding: 70px 0 80px;
+    padding: 65px 0 70px;
+
+    gap: 30px;
   }
 
+
   .hero h1 {
-    font-size: clamp(42px, 13vw, 70px);
+    font-size: clamp(42px,13vw,70px);
 
     letter-spacing: -2px;
   }
+
 
   .hero-copy {
     font-size: 14px;
   }
 
+
   .hero-actions {
     flex-direction: column;
 
     align-items: stretch;
+
+    gap: 10px;
   }
+
 
   .btn {
     width: 100%;
   }
 
+
   .hero-meta {
     justify-content: center;
+
+    margin-top: 28px;
   }
+
 
   .hero-visual {
-    min-height: 330px;
+    min-height: 310px;
   }
+
 
   .hero-orb {
-    width: min(330px, 75vw);
+    width: min(300px,75vw);
   }
 
+
   .floating-card {
-    transform: scale(0.9);
+    transform: scale(.85);
   }
 
 
   .section {
-    width: min(var(--max), calc(100% - 32px));
+    width: calc(100% - 32px);
 
-    padding: 85px 0;
+    padding: 75px 0;
   }
+
 
   .section-heading {
     flex-direction: column;
 
     align-items: flex-start;
 
-    margin-bottom: 38px;
+    margin-bottom: 32px;
   }
+
 
   .section h2,
   .about h2 {
-    font-size: clamp(36px, 11vw, 56px);
+    font-size: clamp(36px,11vw,56px);
 
     letter-spacing: -1.5px;
   }
 
 
   .about-stats {
-    gap: 25px;
+    gap: 22px;
+
+    margin-top: 35px;
   }
+
 
   .stat strong {
-    font-size: 21px;
+    font-size: 20px;
   }
 
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
 
   .card {
-    min-height: 250px;
+    min-height: 235px;
+
+    padding: 25px;
+  }
+
+
+  .card h3 {
+    margin-top: 35px;
+
+    font-size: 23px;
   }
 
 
   .project {
-    min-height: 190px;
+    min-height: 185px;
 
-    padding: 24px;
+    padding: 23px;
 
-    grid-template-columns: 45px 1fr auto;
+    grid-template-columns: 42px minmax(0,1fr) auto;
 
-    gap: 15px;
+    gap: 12px;
   }
+
 
   .project h3 {
-    font-size: clamp(34px, 12vw, 58px);
+    font-size: clamp(34px,12vw,58px);
   }
+
 
   .project-view {
     opacity: 1;
 
     transform: none;
   }
+
 
   .arrow {
     width: 42px;
@@ -1675,19 +1857,26 @@ button {
 
 
   .contact {
-    width: min(var(--max), calc(100% - 32px));
+    width: calc(100% - 32px);
 
-    padding: 90px 0;
+    padding: 75px 0;
   }
 
+
   .contact h2 {
-    font-size: clamp(42px, 12vw, 70px);
+    font-size: clamp(42px,12vw,70px);
 
     letter-spacing: -2px;
   }
 
+
   .contact-description {
     font-size: 13px;
+  }
+
+
+  .contact-form {
+    margin-top: 38px;
   }
 
 
@@ -1698,8 +1887,18 @@ button {
   }
 
 
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+
+  .form-group input {
+    height: 50px;
+  }
+
+
   .footer {
-    width: min(var(--max), calc(100% - 32px));
+    width: calc(100% - 32px);
 
     flex-direction: column;
 
@@ -1711,12 +1910,13 @@ button {
 
   .back-top {
     left: 16px;
+
     bottom: 16px;
   }
 
 
   .modal-box {
-    padding: 35px 25px 25px;
+    padding: 38px 24px 24px;
   }
 
 }
@@ -1729,8 +1929,9 @@ button {
 @media (max-width: 430px) {
 
   .hero {
-    padding-top: 55px;
+    padding-top: 50px;
   }
+
 
   .eyebrow {
     font-size: 9px;
@@ -1738,36 +1939,56 @@ button {
     letter-spacing: 1px;
   }
 
+
   .hero h1 {
     font-size: 43px;
   }
+
 
   .hero-copy {
     font-size: 13px;
   }
 
+
   .hero-meta {
     font-size: 8px;
+
+    gap: 8px;
   }
 
-  .project {
-    grid-template-columns: 1fr auto;
+
+  .hero-visual {
+    min-height: 280px;
   }
+
+
+  .floating-card {
+    display: none;
+  }
+
+
+  .project {
+    grid-template-columns: minmax(0,1fr) auto;
+  }
+
 
   .project-number {
     display: none;
   }
 
+
   .project p {
     font-size: 10px;
   }
+
 
   .project h3 {
     font-size: 42px;
   }
 
+
   .modal-box h2 {
-    font-size: 55px;
+    font-size: 52px;
   }
 
 }
@@ -1783,12 +2004,15 @@ button {
     scroll-behavior: auto;
   }
 
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: .01ms !important;
+
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+
+    transition-duration: .01ms !important;
   }
 
 }
