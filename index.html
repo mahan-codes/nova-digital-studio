@@ -6,29 +6,40 @@
 
   <meta
     name="description"
-    content="نُوا — طراحی و توسعه وب‌سایت‌های مدرن و حرفه‌ای"
+    content="نُوا — استودیو طراحی و توسعه وب‌سایت‌های مدرن و حرفه‌ای"
   >
+
+  <meta name="theme-color" content="#090909">
 
   <title>نُوا — استودیو طراحی دیجیتال</title>
 
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header -->
   <header class="header">
 
-    <a class="logo" href="#home">
+    <a class="logo" href="#home" aria-label="نُوا">
       NOVA<span>.</span>
     </a>
 
-    <button class="menu-toggle" aria-label="باز کردن منو">
-      ☰
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="باز کردن منو"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="منوی اصلی">
       <a href="#home">خانه</a>
       <a href="#about">درباره ما</a>
       <a href="#services">خدمات</a>
@@ -44,7 +55,7 @@
     <!-- HERO -->
     <section id="home" class="hero">
 
-      <div class="hero-content">
+      <div class="hero-content reveal">
 
         <p class="eyebrow">
           استودیو دیجیتال · تأسیس ۱۴۰۵
@@ -65,23 +76,52 @@
 
           <a class="btn btn-primary" href="#work">
             مشاهده نمونه‌کارها
+            <span>↗</span>
           </a>
 
           <a class="btn btn-ghost" href="#contact">
-            شروع یک پروژه ↗
+            شروع یک پروژه
+            <span>↗</span>
           </a>
 
+        </div>
+
+        <div class="hero-meta">
+          <span>طراحی</span>
+          <i></i>
+          <span>توسعه</span>
+          <i></i>
+          <span>تجربه کاربری</span>
         </div>
 
       </div>
 
 
-      <div class="hero-orb" aria-hidden="true">
+      <div class="hero-visual reveal">
 
-        <div class="orb-ring"></div>
+        <div class="orb-glow"></div>
 
-        <div class="orb-core">
-          N
+        <div class="hero-orb">
+
+          <div class="orb-ring orb-ring-one"></div>
+          <div class="orb-ring orb-ring-two"></div>
+
+          <div class="orb-dot"></div>
+
+          <div class="orb-core">
+            N
+          </div>
+
+        </div>
+
+        <div class="floating-card floating-card-one">
+          <span>01</span>
+          <strong>Creative</strong>
+        </div>
+
+        <div class="floating-card floating-card-two">
+          <span>02</span>
+          <strong>Digital</strong>
         </div>
 
       </div>
@@ -90,35 +130,49 @@
 
 
     <!-- ABOUT -->
-    <section id="about" class="section about">
+    <section id="about" class="section about reveal">
 
-      <div>
-
-        <p class="eyebrow">
-          ۰۱ / درباره ما
-        </p>
+      <div class="section-label">
+        <p class="eyebrow">۰۱ / درباره ما</p>
 
         <h2>
           ایده‌ها را به
           <br>
-          <span>واقعیت دیجیتال تبدیل می‌کنیم.</span>
+          <span>واقعیت دیجیتال</span>
+          تبدیل می‌کنیم.
         </h2>
-
       </div>
-
 
       <div class="about-text">
 
         <p>
-          نُوا یک استودیوی دیجیتال با تمرکز بر طراحی
-          و توسعه وب‌سایت‌های مدرن، ساده و کاربردی است.
+          نُوا یک استودیوی دیجیتال با تمرکز بر طراحی و توسعه
+          وب‌سایت‌های مدرن، ساده و کاربردی است.
         </p>
 
         <p>
-          ما طراحی، تجربه کاربری و توسعه را در کنار هم
-          قرار می‌دهیم تا وب‌سایت‌هایی سریع، حرفه‌ای
-          و ماندگار خلق کنیم.
+          ما طراحی، تجربه کاربری و توسعه را در کنار هم قرار می‌دهیم
+          تا وب‌سایت‌هایی سریع، حرفه‌ای و ماندگار خلق کنیم.
         </p>
+
+        <div class="about-stats">
+
+          <div class="stat">
+            <strong>۰۳+</strong>
+            <span>پروژه نمایشی</span>
+          </div>
+
+          <div class="stat">
+            <strong>۱۰۰٪</strong>
+            <span>ریسپانسیو</span>
+          </div>
+
+          <div class="stat">
+            <strong>۲۴/۷</strong>
+            <span>تمرکز روی پروژه</span>
+          </div>
+
+        </div>
 
       </div>
 
@@ -128,19 +182,15 @@
     <!-- SERVICES -->
     <section id="services" class="section">
 
-      <div class="section-heading">
+      <div class="section-heading reveal">
 
         <div>
-
-          <p class="eyebrow">
-            ۰۲ / خدمات
-          </p>
+          <p class="eyebrow">۰۲ / خدمات</p>
 
           <h2>
             چه کاری
             <span>انجام می‌دهیم؟</span>
           </h2>
-
         </div>
 
         <p class="section-note">
@@ -152,50 +202,65 @@
 
       <div class="cards">
 
-        <article class="card">
+        <article class="card reveal">
 
-          <span>۰۱</span>
+          <div class="card-top">
+            <span>۰۱</span>
+            <div class="card-icon">↗</div>
+          </div>
 
-          <h3>
-            طراحی وب‌سایت
-          </h3>
+          <div>
+            <h3>طراحی وب‌سایت</h3>
 
-          <p>
-            طراحی رابط‌های مدرن و حرفه‌ای متناسب
-            با برند و نیاز مخاطبان شما.
-          </p>
+            <p>
+              طراحی رابط‌های مدرن و حرفه‌ای متناسب با برند
+              و نیاز مخاطبان شما.
+            </p>
+          </div>
 
-        </article>
-
-
-        <article class="card">
-
-          <span>۰۲</span>
-
-          <h3>
-            توسعه وب‌سایت
-          </h3>
-
-          <p>
-            ساخت وب‌سایت‌های سریع، واکنش‌گرا و
-            استاندارد با کدنویسی تمیز و قابل توسعه.
-          </p>
+          <div class="card-line"></div>
 
         </article>
 
 
-        <article class="card">
+        <article class="card reveal">
 
-          <span>۰۳</span>
+          <div class="card-top">
+            <span>۰۲</span>
+            <div class="card-icon">↗</div>
+          </div>
 
-          <h3>
-            لندینگ پیج
-          </h3>
+          <div>
+            <h3>توسعه وب‌سایت</h3>
 
-          <p>
-            طراحی صفحات هدفمند برای معرفی خدمات،
-            محصولات و افزایش تعامل کاربران.
-          </p>
+            <p>
+              ساخت وب‌سایت‌های سریع، واکنش‌گرا و استاندارد
+              با کدنویسی تمیز و قابل توسعه.
+            </p>
+          </div>
+
+          <div class="card-line"></div>
+
+        </article>
+
+
+        <article class="card reveal">
+
+          <div class="card-top">
+            <span>۰۳</span>
+            <div class="card-icon">↗</div>
+          </div>
+
+          <div>
+            <h3>لندینگ پیج</h3>
+
+            <p>
+              طراحی صفحات هدفمند برای معرفی خدمات،
+              محصولات و افزایش تعامل کاربران.
+            </p>
+          </div>
+
+          <div class="card-line"></div>
 
         </article>
 
@@ -205,21 +270,17 @@
 
 
     <!-- WORK -->
-    <section id="work" class="section">
+    <section id="work" class="section work-section">
 
-      <div class="section-heading">
+      <div class="section-heading reveal">
 
         <div>
-
-          <p class="eyebrow">
-            ۰۳ / نمونه‌کارها
-          </p>
+          <p class="eyebrow">۰۳ / نمونه‌کارها</p>
 
           <h2>
             ساخته شده برای
             <span>متفاوت دیده شدن.</span>
           </h2>
-
         </div>
 
       </div>
@@ -227,21 +288,31 @@
 
       <div class="projects">
 
-        <article class="project project-one">
+
+        <!-- ATLAS -->
+        <article
+          class="project project-one reveal"
+          data-project="atlas"
+          tabindex="0"
+          role="button"
+          aria-label="مشاهده پروژه ATLAS"
+        >
 
           <div class="project-number">
             ۰۱
           </div>
 
-          <div>
+          <div class="project-info">
 
             <p>
               برند / فروشگاه اینترنتی
             </p>
 
-            <h3>
-              ATLAS
-            </h3>
+            <h3>ATLAS</h3>
+
+            <span class="project-view">
+              مشاهده پروژه
+            </span>
 
           </div>
 
@@ -252,21 +323,30 @@
         </article>
 
 
-        <article class="project project-two">
+        <!-- ORBIT -->
+        <article
+          class="project project-two reveal"
+          data-project="orbit"
+          tabindex="0"
+          role="button"
+          aria-label="مشاهده پروژه ORBIT"
+        >
 
           <div class="project-number">
             ۰۲
           </div>
 
-          <div>
+          <div class="project-info">
 
             <p>
               فناوری / نرم‌افزار
             </p>
 
-            <h3>
-              ORBIT
-            </h3>
+            <h3>ORBIT</h3>
+
+            <span class="project-view">
+              مشاهده پروژه
+            </span>
 
           </div>
 
@@ -277,21 +357,30 @@
         </article>
 
 
-        <article class="project project-three">
+        <!-- MONO -->
+        <article
+          class="project project-three reveal"
+          data-project="mono"
+          tabindex="0"
+          role="button"
+          aria-label="مشاهده پروژه MONO"
+        >
 
           <div class="project-number">
             ۰۳
           </div>
 
-          <div>
+          <div class="project-info">
 
             <p>
               هتلداری / برند
             </p>
 
-            <h3>
-              MONO
-            </h3>
+            <h3>MONO</h3>
+
+            <span class="project-view">
+              مشاهده پروژه
+            </span>
 
           </div>
 
@@ -307,7 +396,7 @@
 
 
     <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact reveal">
 
       <p class="eyebrow">
         ۰۴ / تماس با ما
@@ -319,12 +408,67 @@
         <span>بیایید آن را واقعی کنیم.</span>
       </h2>
 
-      <a
-        class="contact-link"
-        href="mailto:hello@nova-studio.example"
-      >
-        hello@nova-studio.example ↗
-      </a>
+      <p class="contact-description">
+        چند خط درباره پروژه‌تان بنویسید؛
+        مسیر شروع را با هم مشخص می‌کنیم.
+      </p>
+
+
+      <form class="contact-form" id="contactForm">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="name">نام</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="نام شما"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">ایمیل</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">
+            درباره پروژه
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="کمی درباره ایده یا پروژه‌تان بنویسید..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+          ارسال درخواست
+          <span>↗</span>
+        </button>
+
+      </form>
 
     </section>
 
@@ -345,7 +489,65 @@
   </footer>
 
 
-  <script src="script.js"></script>
+  <!-- Back To Top -->
+  <button
+    class="back-top"
+    id="backTop"
+    aria-label="بازگشت به بالا"
+  >
+    ↑
+  </button>
+
+
+  <!-- PROJECT MODAL -->
+  <div
+    class="modal"
+    id="projectModal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-overlay"></div>
+
+    <div
+      class="modal-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="بستن"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow" id="modalCategory">
+        پروژه
+      </p>
+
+      <h2 id="modalTitle">
+        پروژه
+      </h2>
+
+      <p id="modalDescription">
+        توضیحات پروژه
+      </p>
+
+      <div class="modal-tags" id="modalTags"></div>
+
+      <div class="modal-footer">
+        <span id="modalNumber">۰۱</span>
+        <span>نمونه‌کار مفهومی نُوا</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="./script.js"></script>
 
 </body>
 </html>
